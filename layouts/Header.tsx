@@ -20,9 +20,9 @@ function Header() {
     }
 
     return (
-        <div className="sticky top-4 p-3 w-full bg-svpink dark:bg-white rounded-lg flex justify-between items-center my-4 text-black">
+        <div className="sticky top-4 p-3 w-full bg-gray-300 dark:bg-white rounded-lg flex justify-between items-center my-4 text-black">
             <h1 className="font-bold">
-                PINKY
+                WEB3
             </h1>
 
             <div className="space-x-2">

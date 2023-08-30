@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={cn(inter.className, "text-black dark:text-black")}>
+            <body className={cn(inter.className)}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <CustomProvider>
                         <RootComponent>

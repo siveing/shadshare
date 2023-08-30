@@ -50,13 +50,14 @@ function FormLogin() {
 
     type TAuthForm = Pick<TUser, "username" | "password">;
 
-    function onSubmit(values: TAuthForm) {
+    function onSubmit(values: any) {
         if (signIn(values)) {
             dispatch(setCurrentUser(values))
             router.push('/dashboard');
+
             setTimeout(() => {
                 dispatch(setLoading(false));
-            }, 1000);
+            }, 1200);
         }
     }
 
@@ -78,7 +79,7 @@ function FormLogin() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className=" space-y-3">
                 <FormField
                     name={'username' as never}
                     control={form.control}
@@ -86,7 +87,7 @@ function FormLogin() {
                         <FormItem>
                             <FormLabel>Username</FormLabel>
                             <FormControl>
-                                <Input autoComplete="false" placeholder="Username" {...field} />
+                                <Input autoCorrect="false" autoComplete="false" placeholder="Username" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -99,7 +100,7 @@ function FormLogin() {
                         <FormItem>
                             <FormLabel>Password</FormLabel>
                             <FormControl>
-                                <Input autoComplete="false" placeholder="Password" {...field} />
+                                <Input autoCorrect="false" autoComplete="false" placeholder="Password" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
